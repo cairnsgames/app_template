@@ -8,16 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm ci
-
-  publish:
-    needs: build
-    runs-on: ubuntu-latest
     permissions:
       packages: write
       contents: write
@@ -40,7 +30,13 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
           
-    
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: write
+    steps:    
       - name: List output files
         run: find dist/ -print
 
