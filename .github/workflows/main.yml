@@ -31,9 +31,11 @@ jobs:
           token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
           registry-url: https://npm.pkg.github.com/
           scope: "@cairnswm"
-      - run: npm ci
+      - run:  |
+          echo "@cairnsgames:registry=https://npm.pkg.github.com" >> .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{secrets.GH_PERSONAL_ACCESS_TOKEN}}" >> .npmrc
+          npm ci
       - run: npm run build
-      - run: npm publish --@cairnsgames:registry=https://npm.pkg.github.com/
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
