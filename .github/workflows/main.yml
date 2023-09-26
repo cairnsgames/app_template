@@ -8,6 +8,7 @@ on:
 env:
   KEY: 123454321
   NAME: '${{ vars.CG_WILLIAM }}'
+  REACT_APP_CAIRNSGAMES_AUTH_API: ${{ vars.REACT_APP_CAIRNSGAMES_AUTH_API }}
 
 jobs:
   build:
