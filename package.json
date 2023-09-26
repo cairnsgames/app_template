@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack serve . --port 3003 --mode=development",
     "prod": "webpack serve . --port 3003 --env target=production",
-    "build": "Webpack . --mode production",
+    "build": "webpack . --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
