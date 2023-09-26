@@ -5,6 +5,10 @@ on:
     branches:    
       - main 
 
+env:
+  KEY: 123454321
+  NAME: ${{ env.CG_WILLIAM }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
