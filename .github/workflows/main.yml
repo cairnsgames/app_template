@@ -18,10 +18,13 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
 
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js 
       uses: actions/setup-node@master
       with:
-        node-version: ${{ matrix.node-version }}
+          node-version: 16
+          token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+          registry-url: https://npm.pkg.github.com/
+          scope: "@cairnswm"
     
     - name: 🔨 Build Project 
       run: |
