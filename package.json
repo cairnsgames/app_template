@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server . --port 3003",
+    "start": "webpack serve . --port 3003 --mode=development",
+    "prod": "webpack serve . --port 3003 --env target=production",
     "build": "Webpack .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,6 +31,7 @@
   "dependencies": {
     "@cairnsgames/tenant": "^1.1.2",
     "bootstrap": "^5.3.0",
+    "dotenv": "^16.3.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
     "react-bootstrap-icons": "^1.10.3",
