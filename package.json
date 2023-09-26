@@ -29,7 +29,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
-    "@cairnsgames/tenant": "^1.1.2",
+    "@cairnsgames/tenant": "^1.1.7",
     "bootstrap": "^5.3.0",
     "copy-webpack-plugin": "^11.0.0",
     "dotenv": "^16.3.1",
