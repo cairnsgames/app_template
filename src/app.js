@@ -11,7 +11,8 @@ const App = () => {
       <Container fluid>
         <h1>Application Template</h1>
         <DisplayTenant />
-        Name: {process.env.name}
+        Name: {process.env.name}<br/>
+        Key: {process.env.key}
       </Container>
     </TenantProvider>
   );
