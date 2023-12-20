@@ -41,6 +41,9 @@ module.exports = (env) => {
       filename: "main.js",
     },
     plugins: [
+      new webpack.ProvidePlugin({
+             process: 'process/browser',
+      }),
       new webpack.DefinePlugin({
         "process.env": JSON.stringify(process.env),
       }),
@@ -85,6 +88,10 @@ module.exports = (env) => {
        * resolve the one with the extension listed first in the array and skip the rest.
        * This is what enables users to leave off the extension when importing
        */
+        alias: {
+          process: "process/browser"
+      },
+      fallback: { crypto: false, "os": false, path: false },
       extensions: [".js", ".jsx", ".json"],
     },
     module: {
